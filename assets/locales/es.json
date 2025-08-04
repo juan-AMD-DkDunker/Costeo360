@@ -1,0 +1,104 @@
+{
+    "tabs": {
+        "inventory": "Inventario",
+        "recipe": "Receta",
+        "sale": "Venta"
+    },
+    "home": {
+        "title": "Inicio",
+        "subtitle": "Bienvenido a la aplicación de ejemplo"
+    },
+    "account": {
+        "title": "Cuenta",
+        "subtitle": "Tu información",
+        "user": {
+            "name": "Nombre",
+            "lastName": "Apellido",
+            "nowYouCan": "Ya puedes crear tu tienda",
+            "createStore": "Crear Tienda"
+        },
+        "empty": {
+            "button": "Crear Cuenta",
+            "placeholder": "Todavia no has creado una cuenta. Presiona el botón de abajo para crear una."
+        }
+    },
+    "inputs": {
+        "searchInUber": "Buscar en Chiclayo Marketplace"
+    },
+    "store": {
+        "products": "Productos"
+    },
+    "search": {
+        "placeholder": "Buscar una tienda",
+        "noResults": "No se encontraron resultados",
+        "suggestionsLabel": "Búsquedas principales"
+    },
+    "createAccount": {
+        "title": "Crear Cuenta",
+        "subtitle": "Nombre",
+        "description": "Este es el nombre que se mostrará en la aplicación.",
+        "form": {
+            "name": "Nombre",
+            "lasName": "Apellido"
+        },
+        "button": "Crear Cuenta"
+    },
+    "createStore": {
+        "title": "Crear Tienda",
+        "subtitle": "Tienda",
+        "description": "Para crear una tienda, necesitamos que nos proporciones la siguiente información",
+        "form": {
+            "storeNameLabel": "Nombre",
+            "storeDescriptionLabel": "Descripción",
+            "storeDescriptionText": "Cuéntanos un poco sobre tu tienda",
+            "storeAddressLabel": "Dirección",
+            "storeAddressText": "Agrega la dirección de tu tienda",
+            "storePhoneLabel": "Teléfono",
+            "storePhoneText": "Agrega el teléfono de tu tienda para que los clientes puedan contactarte",
+            "categoryLabel": "Categoría de la tienda",
+            "categoryText": "Escoge la categoría que mejor describe tu tienda.",
+            "subCategoryLabel": "Subcategoría de tu tienda",
+            "subCategoryText": "Seleccione hasta 3 categorías que mejor describe tu tienda",
+            "imageLabel": "Imagen de tu tienda",
+            "imageText": "Selecciona una imagen que represente tu tienda",
+            "bannerLabel": "Imagen de Fondo",
+            "bannerText": "Selecciona una imagen de fondo para tu tienda",
+            "createStore": "Crear Tienda"
+        },
+        "alert": {
+            "title": "Te falta información",
+            "descriptionMessage": "Necesitas agregar la información requerida para poder crear tu tienda {{ missingfields }}",
+            "button": "Aceptar",
+            "name": "Nombre",
+            "description": "Descripción",
+            "phoneNumber": "Teléfono",
+            "address": "Dirección",
+            "category": "Categoría",
+            "subCategories": "Subcategorías",
+            "image": "Imagen",
+            "bannerImage": "Imagen de Fondo"
+        }
+    },
+    "categories": {
+        "tacos": "Tacos",
+        "pizza": "Pizza",
+        "comida": "Comida",
+        "taxi": "Taxi",
+        "abarrotes": "Abarrotes",
+        "transporte": "Transporte",
+        "ropa": "Ropa",
+        "tecnologia": "Tecnología",
+        "mascotas": "Mascotas"
+    },
+    "subcategories": {
+        "tacos": "Tacos",
+        "pizza": "Pizza",
+        "comida": "Comida",
+        "taxi": "Taxi",
+        "abarrotes": "Abarrotes",
+        "transporte": "Transporte",
+        "ropa": "Ropa",
+        "tecnologia": "Tecnología",
+        "mascotas": "Mascotas"
+    }
+}

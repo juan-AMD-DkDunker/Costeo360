@@ -8,6 +8,7 @@
     "scheme": "costeo360",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "jsEngine": "hermes",
     "ios": {
       "supportsTablet": true
     },
@@ -16,7 +17,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.Costeo360"
     },
     "web": {
       "bundler": "metro",
@@ -33,10 +35,20 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-localization",
+      "expo-dev-client"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "supportsRTL": true,
+      "forcesRTL": true,
+      "router": {},
+      "eas": {
+        "projectId": "7542f8f7-bccc-4fb9-b743-c0465f634f75"
+      }
     }
   }
 }
