@@ -4,7 +4,7 @@
     "slug": "Costeo360",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon360.png",
     "scheme": "costeo360",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -14,7 +14,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/icon360.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -30,10 +30,13 @@
       [
         "expo-splash-screen",
         {
+          "backgroundColor": "#232323",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "dark": {
+            "image": "./assets/images/splash-icon.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
         }
       ],
       "expo-localization",
@@ -43,9 +46,16 @@
       "typedRoutes": true
     },
     "extra": {
-      "supportsRTL": true,
-      "forcesRTL": true,
-      "router": {},
+      "supportsRTL": false,
+      "forcesRTL": false,
+      "router": {
+              "initialRouteName": "(tabs)",
+              "notFound": {
+                "content": "Pantalla no encontrada",
+                "title": "404",
+                "statusCode": 404
+              }
+            },
       "eas": {
         "projectId": "7542f8f7-bccc-4fb9-b743-c0465f634f75"
       }

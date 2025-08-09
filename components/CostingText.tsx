@@ -23,7 +23,7 @@ interface CostingTextProps extends TextProps {
     color?: keyof Colors
 }
 
-export default React.forwardRef(function MarketText({ children, type = CostingTextType.DEFAULT, style, color = 'onSurface', ...rest }: CostingTextProps,ref : any){
+export default React.forwardRef(function CostingText({ children, type = CostingTextType.DEFAULT, style, color = 'onSurface', ...rest }: CostingTextProps,ref : any){
     const { colors } = useTheme();
     return (
         <Text 

@@ -4,7 +4,7 @@ import { SafeAreaView, SafeAreaViewProps } from "react-native-safe-area-context"
 
 interface CostingSafeAreaViewProps extends SafeAreaViewProps {}
 
-export default function MarketSafeAreaView({children} : CostingSafeAreaViewProps) {
+export default function CostingSafeAreaView({children} : CostingSafeAreaViewProps) {
     const { colors } = useTheme();
     return <SafeAreaView style={[styles.container,{backgroundColor: colors.background}]}>{children}</SafeAreaView>;
 }

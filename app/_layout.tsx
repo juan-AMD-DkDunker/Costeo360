@@ -11,6 +11,12 @@ import {
 } from 'react-native-paper';
 import 'react-native-reanimated';
 
+// Set the animation options. This is optional.
+SplashScreen.setOptions({
+  duration: 15000,
+  fade: true,
+});
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 

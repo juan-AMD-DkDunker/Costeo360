@@ -12,7 +12,6 @@ export default function TabLayout() {
   const theme = useTheme();
   const { t } = useTranslation();
 
-
   const tabs = [
     {
       name: 'inventory',
@@ -28,31 +27,56 @@ export default function TabLayout() {
       name: 'sale',
       title: t('tabs.sale'),
       icon: 'file-chart'
+    },
+    {
+      name: 'index',
+      title: 'Perfil',
+      icon: 'account'
     }
   ];
-
-  console.log(tabs);
-
+  console.log(tabs)
   return (
     <Tabs
+      initialRouteName='recipe'
       screenOptions={{
-        tabBarActiveTintColor: theme.colors.onSurface,
+        tabBarActiveTintColor: theme.colors.onSecondary,
         tabBarInactiveTintColor: theme.colors.outline,
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
-      {
-        tabs.map((tab) => (
           <Tabs.Screen
-            key={tab.name}
-            name={tab.name}
+            key={'inventory'}
+            name={'inventory'}
             options={{
-              title: tab.title,
-              tabBarIcon: tabBarIcon(tab.icon)
+              title: t('tabs.inventory'),
+              tabBarIcon: tabBarIcon('clipboard-list'),
+            }}
+
+          />
+          <Tabs.Screen
+            key={'recipe'}
+            name={'recipe'}
+            options={{
+              title: t('tabs.recipe'),
+              tabBarIcon: tabBarIcon('book-open')
             }}
           />
-        ))
-      }
+          <Tabs.Screen
+            key={'sale'}
+            name={'sale'}
+            options={{
+              title: t('tabs.sale'),
+              tabBarIcon: tabBarIcon('file-chart')
+            }}
+          />
+          <Tabs.Screen
+            key={'account'}
+            name="account"
+            options={{
+              title: 'Perfil',
+              tabBarIcon: tabBarIcon('account')
+            }}
+          />
     </Tabs>
   );
 }

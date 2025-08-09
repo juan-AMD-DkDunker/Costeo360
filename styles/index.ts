@@ -10,15 +10,23 @@ export const spacing = {
     xl: 40,
 }
 
+export const alertColors = {
+    error: '#f44336',
+    success: '#4caf50',
+    warning: '#ff9800',
+    info: '#2196f3'
+}
+
 
 export const theme : ThemeProp = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#14AE5C',
+        primary: '#1f6ffaff',
         onBackground: '#010101',
         onSurface: '#010101',
         outline: '#5E5E5E',
+        onSecondary: '#4caf50',
         background: '#FFFFFF',
         error: '#f44336',
         outlineVariant: '#eee',
