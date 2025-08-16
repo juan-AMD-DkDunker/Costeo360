@@ -1,5 +1,5 @@
 import { spacing } from "@/styles";
-import { JSX, useState } from "react";
+import { JSX } from "react";
 import { StyleSheet, View } from "react-native";
 import { TextInput, TextInputProps, useTheme } from "react-native-paper";
 
@@ -15,26 +15,19 @@ interface CostingTextInputProps extends TextInputProps { }
  * 
  * @returns {JSX.Element} The rendered CostingTextInput component.
  */
-export default function CostingTextInput({ mode = 'outlined', onChangeText, ...rest }: CostingTextInputProps): JSX.Element {
+export default function CostingTextInput({ mode = 'outlined',value , onChangeText, ...rest }: CostingTextInputProps): JSX.Element {
     const { colors } = useTheme();
 
-    const [value, setValue] = useState<string>('');
-
     const clearValueHandler = () => {
-        setValue('');
+        onChangeText && onChangeText('')
     }
-
-    const onChangeTextHandler = (text: string) => {
-        setValue(text);
-        onChangeText && onChangeText(text);
-    }
-
+    
     return (
         <View style={styles.textInputWrapper}>
             <TextInput
                 mode={mode}
                 value={value}
-                onChangeText={onChangeTextHandler}
+                onChangeText={onChangeText}
                 outlineStyle={{ borderColor: colors.onSurface }}
                 cursorColor={colors.onSurface}
                 activeOutlineColor={colors.onSurface}

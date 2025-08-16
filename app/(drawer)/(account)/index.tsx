@@ -1,5 +1,4 @@
 import CostingButton from "@/components/CostingButton";
-import CostingHeader from "@/components/CostingHeader";
 import CostingSafeAreaView from "@/components/CostingSafeAreaView";
 import CostingText from "@/components/CostingText";
 import useTranslation from "@/hooks/useTranslation";
@@ -38,7 +37,6 @@ export default function AccountScreen() {
 
   return (
     <CostingSafeAreaView>
-      <CostingHeader title={`${t('account.title')}`} />
       <View style={{ flex: 1 }}>
         {
             <View style={styles.emptyContainer}>

@@ -4,6 +4,7 @@ import CostingText from "@/components/CostingText";
 import CostingTextInput from "@/components/CostingTextInput";
 import CostingBackHeader from "@/components/headers/CostingBackHeader";
 import { MEASURES } from "@/constants/Measures";
+import { useIngredientStore } from "@/store";
 import { spacing } from "@/styles";
 import React, { useState } from "react";
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from "react-native";
@@ -11,11 +12,11 @@ import { Chip, useTheme } from "react-native-paper";
 
 export default function CreateScreen() {
     const { colors } = useTheme();
-
-    const [name, setName] = useState<string | null>('');
-    const [quantity, setQuantity] = useState<string | null>('');
-    const [cost, setCost] = useState<string | null>('');
-    const [measure, setMeasure] = useState<string | null>('');
+    const { createIngredient } = useIngredientStore();
+    const [name, setName] = useState<string | undefined>('');
+    const [quantity, setQuantity] = useState<string | undefined>('');
+    const [cost, setCost] = useState<string | undefined>('');
+    const [measure, setMeasure] = useState<string | undefined>('');
 
     const createInventoryHandler = () => {
         const missingfields = [];
@@ -28,6 +29,17 @@ export default function CreateScreen() {
             Alert.alert('Te falta información', 'Necesitas agregar la información requerida para poder registrar el producto' + missingfields.join(", "));
             return;
         }
+        createIngredient({
+            name: name!,
+            capacity: parseFloat(quantity!),
+            cost: parseFloat(cost!),
+            measure: measure!
+        });
+        Alert.alert('Producto registrado', 'El producto ha sido registrado exitosamente');
+        setName('');
+        setQuantity('');    
+        setCost('');
+        setMeasure('');
     }
     return (
         <CostingSafeAreaView>
@@ -38,12 +50,12 @@ export default function CreateScreen() {
                 keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
             >
                 <ScrollView style={styles.container} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-                    <CostingText type={'subtitle'} style={styles.subtitle}>{`Registrar Producto`}</CostingText>
+                    <CostingText type={'subtitle'} style={styles.subtitle} >{`Registrar Producto`}</CostingText>
                     <CostingText>
                         Formulario de registro de inventario
                     </CostingText>
                     <View style={styles.inputContainer}>
-                        <CostingTextInput label={'Nombre'} onChangeText={setName} keyboardType={'ascii-capable'} />
+                        <CostingTextInput label={'Nombre'} value={name} onChangeText={setName} keyboardType={'ascii-capable'} />
                         <View style={styles.measureWrapper}>
                             <CostingText type="bold" style={styles.sectionLabel}>
                                 U. Medida
@@ -64,8 +76,8 @@ export default function CreateScreen() {
                                 }
                             </View>
                         </View>
-                        <CostingTextInput label={'Cant. de Empaque'} onChangeText={setQuantity} keyboardType={'number-pad'} />
-                        <CostingTextInput label={'Costo Adquisición'} onChangeText={setCost} keyboardType={'decimal-pad'} />
+                        <CostingTextInput label={'Cant. de Empaque'} value={quantity} onChangeText={setQuantity} keyboardType={'number-pad'} />
+                        <CostingTextInput label={'Costo Adquisición'} value={cost} onChangeText={setCost} keyboardType={'decimal-pad'} />
                         {/* Form input */}
                     </View>
                     <CostingButton onPress={createInventoryHandler}>

@@ -28,7 +28,7 @@ export default function CreateScreen() {
     const [measure, setMeasure] = useState<string | null>('');
 
     const addIngredientHandler = () => {
-        router.push('/(tabs)/recipe/add-ingredient');
+        router.push('/(tabs)/(recipe)/add-ingredient');
     }
 
     const createInventoryHandler = () => {

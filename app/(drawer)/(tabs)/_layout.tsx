@@ -37,7 +37,7 @@ export default function TabLayout() {
   console.log(tabs)
   return (
     <Tabs
-      initialRouteName='recipe'
+      initialRouteName='(recipe)'
       screenOptions={{
         tabBarActiveTintColor: theme.colors.onSecondary,
         tabBarInactiveTintColor: theme.colors.outline,
@@ -46,7 +46,7 @@ export default function TabLayout() {
       }}>
           <Tabs.Screen
             key={'inventory'}
-            name={'inventory'}
+            name={'(inventory)'}
             options={{
               title: t('tabs.inventory'),
               tabBarIcon: tabBarIcon('clipboard-list'),
@@ -55,7 +55,7 @@ export default function TabLayout() {
           />
           <Tabs.Screen
             key={'recipe'}
-            name={'recipe'}
+            name={'(recipe)'}
             options={{
               title: t('tabs.recipe'),
               tabBarIcon: tabBarIcon('book-open')
@@ -63,20 +63,13 @@ export default function TabLayout() {
           />
           <Tabs.Screen
             key={'sale'}
-            name={'sale'}
+            name={'(sale)'}
             options={{
               title: t('tabs.sale'),
               tabBarIcon: tabBarIcon('file-chart')
             }}
           />
-          <Tabs.Screen
-            key={'account'}
-            name="account"
-            options={{
-              title: 'Perfil',
-              tabBarIcon: tabBarIcon('account')
-            }}
-          />
+          
     </Tabs>
   );
 }
